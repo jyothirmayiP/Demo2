@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="pai.css">
+    <style>
+     
+      .v{
+     width:1px;
+     height:58px;
+     margin-top:-50px;
+     margin-left:-20px;
+     background-color:wheat;
+     position: absolute;
+    left:20%;
+}
+#container {
+  height:60vh;
+  width:100vw;
+  margin: 0;
+  padding: 0;
+  background:white;
+  display: grid ;
+  place-items: center
+}
+
+#slider-container {
+  height: 300px;
+  width: 85vw;
+  max-width: 1400px;
+  background:white;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#slider-container .btn {
+  position: absolute;
+  top: calc(50% - 30px);
+  height:10px;
+  width:10px;
+  border-left: 8px solid black;
+  border-top: 8px solid black;
+}
+
+#slider-container .btn:hover {
+  transform: scale(1.2);
+}
+#slider-container .btn:first-of-type {
+  transform: rotate(-45deg);
+  left: 10px
+}
+
+#slider-container .btn:last-of-type {
+  transform: rotate(135deg);
+  right: 10px;
+}
+
+#slider-container #slider {
+  display: flex;
+  width: 500%;
+  height: 100%; 
+  transition: all .5s;
+}
+
+#slider-container #slider .slide {
+  height: 90%;
+  margin: auto 10px;
+  background-color:white;
+  box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
+  display: grid;
+  place-items: center;
+}
+
+#slider-container #slider .slide span {
+  color: white;
+  font-size: 150px;
+}
+
+@media only screen and (min-width: 1100px) {
+
+  #slider-container #slider .slide {
+    width: calc(2.5% - 20px);
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+  #slider-container #slider .slide {
+    width: calc(3.3333333% - 20px);
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+  #slider-container #slider .slide {
+    width: calc(5% - 20px);
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+  #slider-container #slider .slide {
+    width: calc(10% - 20px);
+  }
+
+}
+ #myCarousel {
+    margin-top:100px;
+}
+
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-start,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-item-next:not(.carousel-item-start) {
+        transform: translateX(25%) !important;
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start,
+    .carousel-item-prev:not(.carousel-item-end) {
+        transform: translateX(-25%) !important;
+    }
+
+    .carousel-item-next.carousel-item-start,
+    .active.carousel-item-end {
+        transform: translateX(0) !important;
+    }
+
+    .carousel-inner .carousel-item-prev,
+    .carousel-item-prev:not(.carousel-item-end) {
+        transform: translateX(-25%) !important;
+    }
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .wrap{
+    position:absolute;
+    top:50%;
+    left:50%;
+    translate:(-50%,-50%);
+  }
+  .menu{
+    width:20px;
+    height:2px;
+    background-color:white;
+    margin:3px 0;
+    margin-left:-40px;
+  }
+    </style>
+</head>
+<body class="example">
+<nav class="navbar navbar-expand-lg"style="background-color:#eb8034;height:160px;width:1220px;margin-left:29px;border-radius:15px;">
+  <a href="https://www.paiinternational.in/"><img src="https://static-pai413rrg32vz.cdn.e2enetworks.net/assets/pai/images/logo.png"style="height:60px;width:60px;margin-left:15px;margin-top:-60px;"></a>
+     <i class="bi bi-geo-alt"style="font-size:25px;color:white;margin-left:40px;margin-top:-60px;"></i>
+     <p style="color:white;font-weight:bold;margin-left:7px;margin-top:-50px">Banjara Hills</p>
+     <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search for products,brands and more" aria-label="Search"style="margin-left:26px;width:480px;height:45px;border-top-left-radius:8px;border-bottom-left-radius:8px;;border-top-right-radius:0px;border-bottom-right-radius:0px;margin-left:70px;margin-top:-60px;">
+        <i class="bi bi-search" style="color:black;font-size:26px;background-color:white;margin-left:548px;height:45px;border-top-right-radius:8px;border-bottom-right-radius:8px;padding-top:6px;padding-right:12px;margin-top:-60px;"></i>
+    </form>
+    <form>
+      <button  type="login"style="width:100px;height:35px;border-width:0px;background-color:#351878;color:white;font-weight:bold;padding-left:5px;margin-left:200px;margin-bottom:60px;"><i class="bi bi-box-arrow-in-right"style="margin-right:8px;font-weight:bold;"></i><a href="http://localhost/php-nn/customer.php"style="color:white;font-weight:bold;">Login</a></button>
+    </form>
+    <i class="bi bi-cart-fill"style="color:white;font-size:35px;margin-left:30px;margin-bottom:55px;"></i>
+   <i class="bi bi-0-circle-fill"style="color:#351a75;font-size:20px;margin-bottom:65px;margin-left:-20px;"></i>
+   <a href="https://www.paiinternational.in/shop/cart/?r_token1=WY7HK30UX27"style="font-size:13px;color:black;cursor: pointer;color:white;font-weight:bold;margin-bottom:60px;margin-left:5px;">Cart</a>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/shop/giftcards/">
+      <i class="bi bi-gift"style="font-size:25px;color:white;margin-left:-980px;"></i></a>
+   <a href="https://www.paiinternational.in/shop/giftcards/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Gift Cards</a>
+   </div>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/draw-results/"><i class="bi bi-life-preserver"style="font-size:25px;color:white;margin-left:-840px;"></i></a>
+    <a href="https://www.paiinternational.in/draw-results/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Draw Results</a>
+   </div>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/d/pai-international-deal-zone/"><i class="bi bi-cash-coin"style="font-size:25px;color:white;margin-left:-680px;"></i></a>
+    <a href="https://www.paiinternational.in/d/pai-international-deal-zone/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Deal Zone</a>
+   </div>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/shop/storelocator/"><i class="bi bi-arrow-up-right-circle"style="font-size:25px;color:white;margin-left:-545px;"></i></a>
+    <a href="https://www.paiinternational.in/shop/storelocator/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Store Locator</a>
+   </div>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/services/"><i class="bi bi-gear"style="font-size:25px;color:white;margin-left:-385px;"></i></a>
+    <a href="https://www.paiinternational.in/services/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Services</a>
+   </div>
+   <div style="margin-top:100px;">
+    <a href="https://www.paiinternational.in/blogs/"><i class="bi bi-menu-app"style="font-size:25px;margin-left:100px;color:white;margin-left:-255px;"></i></a>
+    <a href="https://www.paiinternational.in/blogs/"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Blogs</a>
+   </div>
+    <div style="margin-top:100px;">
+    <a href="https://play.google.com/store/apps/details?id=com.pai.paiapp"><i class="bi bi-phone"style="font-size:25px;color:white;margin-left:-150px;"></i></a>
+    <a href="https://play.google.com/store/apps/details?id=com.pai.paiapp"style="color:white;font-weight:700;font-size:15px;margin-left:5px;">Download App</a>
+    </div>
+  </nav>
+  <hr  style="height:1px;width:1220px;margin-top:-80px;background-color:wheat;margin-left:30px;">
+<div class="dropdown"style="margin-left:20px;">
+  <p style="padding-left:50px;margin-left:30px;background-color:#eb8034;color:white;height:20px;padding-top:10px;">Select Catogory</p>
+  <div class="wrap"style="margin-top:-5px;margin-right:5px;">
+    <div class="menu"></div>
+    <div class="menu"></div>
+    <div class="menu"></div>
+</div>
+  <div class="dropdown-content"style="width:220px;margin-left:30px;">
+  <a href="https://www.paiinternational.in/shop/categories/furniture-2/">Furniture</a>
+  <a href="#">Accessories</a>
+  <a href="https://www.paiinternational.in/shop/categories/accessories/">Home Appliances</a>
+  <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">Smll Appliances</a>
+  <a href="https://www.paiinternational.in/shop/categories/kitchen-appliances-2/">Kitchen appliances</a>
+  <a href="https://www.paiinternational.in/shop/categories/laptop-it-2/">Laptop & IT</a>
+  <a href="https://www.paiinternational.in/shop/categories/fashion/">Fashion</a>
+  <a href="https://www.paiinternational.in/shop/categories/personal-care-2/">Personal Care</a>
+  <a href="https://www.paiinternational.in/shop/categories/television-audio/">Home Entertainment</a>
+  <a href="https://www.paiinternational.in/shop/categories/mobiles-tablets/">Mobiles & Tablets</a>
+  </div>
+</div>
+<div class="v"></div>
+  <div id="container">
+      <div id="slider-container">
+        <span onclick="slideRight()" class="btn"></span>
+          <div id="slider" style="margin-top:-20px;">
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Television--Audio_GUKkaPa.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:3px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;"><p style="margin-left:24px;">Home</p><p style="margin-top:-10px;">Entertainment</p></a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/tv_SDt0aS9.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="font-size:15px;font-style:normal;margin-top:-90px;">
+            <a href="https://www.paiinternational.in/d/best-offers-deals-on-leds-at-pai-online/"style="color:black;text-decoration:none;">LED</a> </h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/AC.png"style="height:70px;width:70px;margin-top:90px">
+            <h style="margin-right:10px;font-size:15px;font-style:normal;margin-top:-50px;">
+            <a href="https://www.paiinternational.in/d/best-offers-and-discount-online-at-pai/"style="color:black;text-decoration:none;"><p style="margin-left:35px;">Air</p><p style="margin-top:-10px;margin-left:5px;">Conditioner</p></a> </h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/ref-icon.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:10px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/d/best-deals-discounts-online-at-pai-international/"style="color:black;text-decoration:none;">Refrigerator</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Small-Appliances.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:10px;font-size:15px;font-style:normal;margin-top:-20px;">
+            <a href="https://www.paiinternational.in/shop/categories/small-appliances/"style="color:black;text-decoration:none;"><p style="margin-left:15px;">Small</p><p style="margin-top:-10px;">Appliances</p></a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Untitled-1.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/d/best-deals-offers-online-on-fans/"style="color:black;text-decoration:none;">Fan</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Accessories_DQafHMu.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/shop/categories/accessories/"style="color:black;text-decoration:none;">Accessories</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Air_cooler.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/d/best-deals-offers-discounts-online/"style="color:black;text-decoration:none;">Air Cooler</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Fashion_pb5u4uj.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/shop/categories/fashion/"style="color:black;text-decoration:none;">Fashion</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Personal-Care.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/shop/categories/personal-care-2/"style="color:black;text-decoration:none;">Personal Care</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/icon_boEcqMr.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-right:30px;font-size:15px;font-style:normal;margin-top:-40px;">
+            <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Offers</a></h>
+            </div>
+             <div class="slide"style="margin-top:-40px;">
+             <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Furniture.png"style="height:70px;width:70px;margin-top:80px">
+             <h style="margin-left:-15px;font-size:15px;font-style:normal;margin-top:-40px;">
+             <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Furniture</a></h>
+             </div>
+             <div class="slide"style="margin-top:-40px;">
+             <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Kitchen-Appliances.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="margin-left:15px;font-size:15px;font-style:normal;margin-top:-20px;">
+            <a href="https://www.paiinternational.in/shop/categories/kitchen-appliances-2/?cat_slug=kitchen-appliances-2&sorter=default&page=2&page_items_count=20&min_price=74&max_price=33320"style="color:black;text-decoration:none;"><p style="margin-left:5px;">Kitchen</p><p style="margin-top:-10px;">Appliances</p></a></h>
+             </div>
+             <div class="slide"style="margin-top:-40px;">
+             <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Home-Appliances.png"style="height:70px;width:70px;margin-top:80px">
+             <h style="margin-left:15px;font-size:15px;font-style:normal;margin-top:-20px;">
+             <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;"><p style="margin-left:5px;">Home</p><p style="margin-top:-10px;">Appliances</p></a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Laptop--IT.png"style="height:70px;width:70px;margin-top:80px">
+             <h style="margin-left:-15px;font-size:15px;font-style:normal;margin-top:-20px;">
+             <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Laptop & IT</a></h>
+              </div>
+             <div class="slide"style="margin-top:-40px;">
+             <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Television--Audio_GUKkaPa.png"style="height:70px;width:70px;margin-top:80px">
+             <h style="margin-left:3px;font-size:15px;font-style:normal;margin-top:-40px;">
+             <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;"><p style="margin-left:24px;">Home</p><p style="margin-top:-10px;">Entertainment</p></a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/tv_SDt0aS9.png"style="height:70px;width:70px;margin-top:80px">
+            <h style="font-size:15px;font-style:normal;margin-top:-90px;">
+             <a href="https://www.paiinternational.in/d/best-offers-deals-on-leds-at-pai-online/"style="color:black;text-decoration:none;">LED</a> </h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/AC.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-right:10px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/best-offers-and-discount-online-at-pai/"style="color:black;text-decoration:none;"><p style="margin-left:35px;">Air</p><p style="margin-top:-10px;margin-left:5px;">Conditioner</p></a> </h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/ref-icon.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:10px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/best-deals-discounts-online-at-pai-international/"style="color:black;text-decoration:none;">Refrigerator</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Small-Appliances.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:10px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/shop/categories/small-appliances/"style="color:black;text-decoration:none;"><p style="margin-left:15px;">Small</p><p style="margin-top:-10px;">Appliances</p></a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Untitled-1.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/best-deals-offers-online-on-fans/"style="color:black;text-decoration:none;">Fan</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Accessories_DQafHMu.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:12px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/shop/categories/accessories/"style="color:black;text-decoration:none;">Accessories</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Air_cooler.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:15px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/best-deals-offers-discounts-online/"style="color:black;text-decoration:none;">Air Cooler</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Fashion_pb5u4uj.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:10px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/shop/categories/fashion/"style="color:black;text-decoration:none;">Fashion</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Personal-Care.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:5px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/shop/categories/personal-care-2/"style="color:black;text-decoration:none;">Personal Care</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/icon_boEcqMr.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-right:30px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Offers</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Furniture.png"style="height:70px;width:70px;margin-top:80px">
+              <h style="margin-left:-15px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Furniture</a></h>
+            </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="./p13.jpg"style="height:70px;width:70px;margin-top:80px">
+             <h style="margin-left:15px;font-size:15px;font-style:normal;margin-top:-20px;">
+             <a href="https://www.paiinternational.in/shop/categories/kitchen-appliances-2/?cat_slug=kitchen-appliances-2&sorter=default&page=2&page_items_count=20&min_price=74&max_price=33320"style="color:black;text-decoration:none;"><p style="margin-left:5px;">Kitchen</p><p style="margin-top:-10px;">Appliances</p></a></h>
+              </div>
+              <div class="slide"style="margin-top:-40px;">
+                <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Television--Audio_GUKkaPa.png"style="height:70px;width:70px;margin-top:80px">
+                <h style="margin-left:3px;font-size:15px;font-style:normal;margin-top:-40px;">
+                <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;"><p style="margin-left:24px;">Home</p><p style="margin-top:-10px;">Entertainment</p></a></h>
+               </div>
+            <div class="slide"style="margin-top:-40px;">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/cat_images/Laptop--IT.png"style="height:70px;width:70px;margin-top:80px">
+               <h style="margin-left:-15px;font-size:15px;font-style:normal;margin-top:-20px;">
+               <a href="https://www.paiinternational.in/d/todays-deals/"style="color:black;text-decoration:none;margin-left:20px;">Laptop & IT</a></h>
+                </div>
+          </div>
+        <span onclick="slideLeft()" class="btn"></span>
+      </div>
+    </div>
+    <script>
+      var container = document.getElementById('container')
+var slider = document.getElementById('slider');
+var slides = document.getElementsByClassName('slide').length;
+var buttons = document.getElementsByClassName('btn');
+var currentPosition = 0;
+var currentMargin = 0;
+var slidesPerPage = 4;
+var slidesCount = slides - slidesPerPage;
+var containerWidth = container.offsetWidth;
+var prevKeyActive = false;
+var nextKeyActive = true;
+window.addEventListener("resize", checkWidth);
+function checkWidth() {
+  containerWidth = container.offsetWidth;
+  setParams(containerWidth);
+}
+function setParams(w) {
+  if (w < 551) {
+      slidesPerPage = 1;
+  } else {
+      if (w < 901) {
+          slidesPerPage = 2;
+      } else {
+          if (w < 1101) {
+              slidesPerPage = 3;
+          } else {
+              slidesPerPage = 4;
+          }
+      }
+  }
+  slidesCount = slides - slidesPerPage;
+  if (currentPosition > slidesCount) {
+      currentPosition -= slidesPerPage;
+  };
+  currentMargin = - currentPosition * (100 / slidesPerPage);
+  slider.style.marginLeft = currentMargin + '%';
+  if (currentPosition > 0) {
+      buttons[0].classList.remove('inactive');
+  }
+  if (currentPosition < slidesCount) {
+      buttons[1].classList.remove('inactive');
+  }
+  if (currentPosition >= slidesCount) {
+      buttons[1].classList.add('inactive');
+  }
+}
+
+setParams();
+function slideRight() {
+  if (currentPosition != 0) {
+      slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+      currentMargin += (100 / slidesPerPage);
+      currentPosition--;
+  };
+  if (currentPosition === 0) {
+      buttons[0].classList.add('inactive');
+  }
+  if (currentPosition < slidesCount) {
+      buttons[1].classList.remove('inactive');
+  }
+};
+function slideLeft() {
+  if (currentPosition != slidesCount) {
+      slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+      currentMargin -= (100 / slidesPerPage);
+      currentPosition++;
+  };
+  if (currentPosition == slidesCount) {
+      buttons[1].classList.add('inactive');
+  }
+  if (currentPosition > 0) {
+      buttons[0].classList.remove('inactive');
+  }
+};
+    </script>
+<a href="https://www.paiinternational.in/d/pai-international-deal-zone/">
+<div class="container"style="width:650px;height:600px;margin-left:-0px;margin-top:-200px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/apple-home-page-banners_icFTGD0.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/home-web.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/SAMSUNG-GALAXY.jpg" alt="New york" style="width:100%;">
+      </div>
+      <div class="item">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/TRENDS-OF-PAI-3.jpg" alt="New york" style="width:100%;">
+        </div>
+        <div class="item">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/so-ny.jpg" alt="New york" style="width:100%;">
+        </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</a>
+<a href="https://www.paiinternational.in/shop/details/printer/hp-smart-tank-580-all-in-one-printer/">
+<div class="container"style="width:630px;height:600px;margin-left:635px;margin-top:-600px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+   <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/hp_XYC6CNL.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/samsung-side-by-side-refrigerator_00HRMM1.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/samsung-side-by-side-refrigerator_00HRMM1.jpg" alt="New york" style="width:100%;">
+      </div>
+      <div class="item">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/wafers-of-pai-3.jpg" alt="New york" style="width:100%;">
+        </div>
+       </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>  
+</a>
+<div style="height:260px;width:600px;margin-left:650px;margin-top:-220px;">
+<a href="https://www.paiinternational.in/d/similar-product-you-are-searching/">
+  <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/Ao-Smith-ProPlanet-P4-Water-Purifier-5-L-RO--SCMT-Water-Purifier--Black_PcQYAA2.jpg"style="height:275px;width:300px;"></a>
+  <a href="https://www.paiinternational.in/d/best-offers-on-water-purifier/">
+<img src="https://media-paijju09yhv08.cdn.e2enetworks.net/banners/Bosch-8-kg-Fully-Automatic-Front-Load-Washing-Machine-WAJ2426GIN-Grey_7903obd.jpg"style="height:270px;width:278px;margin-left:18px;margin-top:-18px;"></a>
+</div>
+<div style="margin-left:40px;margin-top:100px;">
+  <i class="bi bi-calendar3"style="font-size:40px;color:#f07b07;"></i>
+  <p style="font-size:15px;font-weight:700;margin-top:-50px;margin-left:60px;">BAJAJ EMI AVAILABLE</p><p style="font-size:15px;font-weight:500;color:#a6a3a1;margin-left:60px;">EMI'S now on debit cards</p>
+</div>
+<div style="margin-left:350px;margin-top:-70px;">
+  <i class="bi bi-truck"style="font-size:40px;color:#f07b07;"></i>
+  <p style="font-size:15px;font-weight:700;margin-top:-50px;margin-left:60px;">FREE HOME DELIVERY</p><p style="font-size:15px;font-weight:500;color:#a6a3a1;margin-left:60px;">EMI'S now on debit cards</p>
+</div>
+<div style="margin-left:650px;margin-top:-70px;">
+  <i class="bi bi-arrow-left-right"style="font-size:40px;color:#f07b07;"></i>
+  <p style="font-size:15px;font-weight:700;margin-top:-50px;margin-left:60px;">EASY RETURNS</p><p style="font-size:15px;font-weight:500;color:#a6a3a1;margin-left:60px;">EMI'S now on debit cards</p>
+</div>
+<div style="margin-left:970px;margin-top:-70px;">
+  <i class="bi bi-cash"style="font-size:40px;color:#f07b07;"></i>
+  <p style="font-size:15px;font-weight:700;margin-top:-50px;margin-left:60px;">PAY AT STORE</p><p style="font-size:15px;font-weight:500;color:#a6a3a1;margin-left:60px;">EMI'S now on debit cards</p>
+</div>
+<div style="background-color:#fcfcf7;height:600px;width:1230px;border-radius:20px;margin-left:15px;margin-top:50px;">
+  <div style="padding-top:30px;margin-left:40px;">
+   <h style="font-size:28px;font-weight:600;">Top Selling Mobiles</h>
+  </div>
+  <a href="https://www.paiinternational.in/d/one-plus-nord/">
+  <div style="background-color:#e8e8e1;height:340px;width:260px;border-radius:20px;margin-left:40px;margin-top:30px;">
+   <div class="container"style="width:260px;padding:15px;border-color:white;">
+   <div id="myCarousel" class="carousel slide" data-ride="carousel"style="margin-top:-2px;">
+     <!-- Indicators -->
+     <ol class="carousel-indicators">
+       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+       <li data-target="#myCarousel" data-slide-to="1"></li>
+       <li data-target="#myCarousel" data-slide-to="2"></li>
+     </ol>
+ 
+     <!-- Wrapper for slides -->
+     <div class="carousel-inner">
+       <div class="item active">
+         <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/OPPO-A17-Sunlight-Orange-64-GB-4-GB-RAM_3pYH2Wd.jpg" alt="Los Angeles" style="width:100%;">
+       </div>
+ 
+       <div class="item">
+         <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Xiaomi-66_rZT8Swy.jpg" alt="Chicago" style="width:100%;">
+       </div>
+     
+       <div class="item">
+         <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/OnePlus-Nord-CE-3-Lite-5G-8-GB-RAM-256-GB-ROM-_ZTIBFyq.jpg" alt="New york" style="width:100%;">
+       </div>
+      </div>
+     <!-- Left and right controls -->
+     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+       <span class="glyphicon glyphicon-chevron-left"></span>
+       <span class="sr-only">Previous</span>
+     </a>
+     <a class="right carousel-control" href="#myCarousel" data-slide="next">
+       <span class="glyphicon glyphicon-chevron-right"></span>
+       <span class="sr-only">Next</span>
+     </a>
+   </div>
+ </div>
+</div>
+</div>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+<div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+   <div class="carousel-inner"style="width:70vw;margin-left:240px;margin-top:-600px;">
+       <div class="carousel-item active">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:30px;">
+                  <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/54/0b/540b7ae5855a8fa48a6827f081da0564.jpg"style="height:270px;width:300px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/details/smart-phone/vivo-v27-5g-magic-blue-128-gb-8-gb-ram/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">vivo V27</p>
+                           <p style="margin-left:-25px;margin-top:-15px;font-size:18px;font-weight:bold;">(Lite Blue Tide,5G)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹17998.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹19998.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Vivo</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1056</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+        </div>
+       </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                   <a href="https://www.paiinternational.in/shop/details/smart-phone/apple-iphone-14-midnight-256-gb/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/2a/95/2a9560f1a98b8b19c0f45c6ec24a65b3.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">Apple iphone 14</p>
+                           <p style="margin-left:-25px;margin-top:-15px;font-size:18px;font-weight:bold;">(Starlight,128 GB)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹64900.00</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹79899.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Apple</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.4056</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/81/60/816031222f8c3a7245d0b029d848a94e.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">Vivo Y100 5G</p>
+                           <p style="margin-left:-35px;font-size:18px;font-weight:bold;margin-top:-20px;">(Twilight Gold,128)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹23998.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹29999.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Vivo</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1389</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/d6/39/d63944aa58670a248fb4914aa8a1718f.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="font-size:15px;font-weight:bold;">Vivo Y02T</p>
+                           <p style="margin-left:-20px;margin-top:-15px;font-size:18px;font-weight:bold;">(4GB RAM,64GB)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹9998.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹15998.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Vivo</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.556</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/e6/67/e6675e938f51a8c370cbd6d4fe829002.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">Oppo A78 5GB</p>
+                           <p style="margin-left:-35px;margin-top:-15px;font-size:18px;font-weight:bold;">(Glowing Blue,128)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹18998.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹21999.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Oppo</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1024</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/66/14/66145db8b9f01b990d0643cea4035b4f.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="font-size:15px;font-weight:bold;">Redmi 12C</p>
+                           <p style="margin-left:-5px;margin-top:-15px;font-size:18px;font-weight:bold;">(Lavaender Purple,128)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹9499.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹14998.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Xiaomi</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.528</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/92/db/92db2ff66c480935962bd9da1a64330c.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">Oppo A77s</p>
+                           <p style="margin-left:-20px;margin-top:-15px;font-size:18px;font-weight:bold;">(Glacier Blue,5G)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹23998.99</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹27998.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Oppo</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1389</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+       <div class="carousel-item">
+           <div class="col-md-3">
+               <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                   <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                    <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/31/b4/31b442c863d3025855bcedbc6d5b777e.jpg"style="height:270px;width:380px;"></a>
+                   <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                       <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                           <p style="margin-left:-20px;font-size:15px;font-weight:bold;">realme 11 Pro 5G</p>
+                           <p style="margin-left:-20px;margin-top:-15px;font-size:18px;font-weight:bold;">(Sunrise Beige,128)</p></a>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                           <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹24999.00</p></h>
+                           <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹27998.00</p>
+                           <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Realme</p>
+                           <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1042</p>
+                           <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+$('.carousel .carousel-item').each(function () {
+var minPerSlide = 4;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i = 0; i < minPerSlide; i++) { next=next.next(); if (!next.length) { next=$(this).siblings(':first'); } next.children(':first-child').clone().appendTo($(this)); } });
+</script>
+<div style="margin-top:-60px;margin-left:25px;">
+  <h style="font-size:20px;font-weight:600;margin-left:40px;">Back To Campus Offer</h><a href="https://www.paiinternational.in/d/pai-international-deal-zone/"><p style="margin-top:-30px;margin-left:1140px;font-size:16px;font-weight:600;color:black;">View More</p></a>  
+</div>
+<div style="background-color:#efefe3;height:600px;width:1230px;border-radius:20px;margin-left:15px;margin-top:40px;padding-top:30px;">
+<div style="background-color:white;height:500px;width:170px;margin-left:20px;padding-left:10px;padding-top:10px;">  
+    <a href="https://www.paiinternational.in/shop/details/laptop/hp-12th-gen-396-cm-15s-fq5112tu-windows-11-16-gb-d/">
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/14/1a/141a671fd5af1617d3d8d521f5727db3.jpg"style="height:270px;width:170px;"></a>
+ <div style="margin-top:-270px;">
+  <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+    <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">18%</button></a>  
+</div>
+<div style="margin-top:230px;">
+  <h style="margin-left:35px;font-size:15px;font-style:normal;">
+    <a href="https://www.paiinternational.in/shop/details/laptop/hp-12th-gen-396-cm-15s-fq5112tu-windows-11-16-gb-d/"style="color:black;text-decoration:none;">
+        <p style="margin-left:10px;font-size:15px;font-weight:bold;margin-top:-20px;">HP 12th Gen 39.6cm</p>
+        <p style="margin-left:10px;margin-top:-15px;font-size:15px;font-weight:bold;">(15s-fsq5112TU)..</p></a>
+        <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹81990.00</p>
+        <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+    </h>
+        <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹99899.00</p>
+        <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.5113</p>
+        <a href="https://www.paiinternational.in/shop/details/laptop/hp-12th-gen-396-cm-15s-fq5112tu-windows-11-16-gb-d/">
+        <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button></a>
+    </div>
+    <div style="background-color:white;height:500px;width:170px;margin-left:190px;padding-left:10px;padding-top:10px;margin-top:-450px;">  
+        <a href="https://www.paiinternational.in/shop/details/laptop/asus-vivobook-15-x1500ea-ej3381ws-laptop-core-i3-1/">
+          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/32/ea/32eaf324d98b9c57cd454d379a3986cd.jpg"style="height:270px;width:170px;"></a>
+     <div style="margin-top:-270px;">
+      <a href="https://www.paiinternational.in/shop/details/laptop/asus-vivobook-15-x1500ea-ej3381ws-laptop-core-i3-1/">
+        <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">18%</button></a>
+    </div>
+    <div style="margin-top:230px;">
+      <h style="margin-left:35px;font-size:15px;font-style:normal;">
+        <a href="https://www.paiinternational.in/shop/details/laptop/asus-vivobook-15-x1500ea-ej3381ws-laptop-core-i3-1/"style="color:black;text-decoration:none;">
+            <p style="margin-left:8px;font-size:15px;font-weight:bold;margin-top:-20px;">ASUS TUF A15 AMD</p>
+            <p style="margin-left:10px;margin-top:-15px;font-size:15px;font-weight:bold;">Ryzen 7(15.6 inch,..</p></a>
+            <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹86615.00</p>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+        </h>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹149899.00</p>
+            <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.5389</p>
+            <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+              <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button></a>
+        </div>
+    </div>
+    <div style="background-color:white;height:500px;width:170px;margin-left:390px;padding-left:10px;padding-top:10px;margin-top:-500px;">  
+      <a href="https://www.paiinternational.in/shop/details/laptop/dell-inspiron-3520-intel-core-i5-12th-gen-d560885w/">  
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/51/44/51443e9e5868b0d35a2b0afe12547beb.jpg"style="height:270px;width:180px;margin-left:-10px;margin-top:-5px;"></a>
+     <div style="margin-top:-270px;">
+      <a href="https://www.paiinternational.in/shop/details/laptop/dell-inspiron-3520-intel-core-i5-12th-gen-d560885w/">
+        <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">42%</button>  
+    </div>
+    <div style="margin-top:250px;">
+      <h style="margin-left:35px;font-size:15px;font-style:normal;">
+        <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+            <p style="margin-left:20px;font-size:15px;font-weight:bold;margin-top:-20px;">Dell Inspiron 5430</p>
+            <p style="margin-left:10px;margin-top:-15px;font-size:15px;font-weight:bold;">Intel Core i5 13th Gen..</p></a>
+            <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹65650.00</p>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+        </h>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹84223.00</p>
+            <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.3648</p>
+            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button>
+        </div>
+    </div>
+    <div style="background-color:white;height:500px;width:170px;margin-left:590px;padding-left:10px;padding-top:10px;margin-top:-500px;">  
+      <a href="https://www.paiinternational.in/shop/details/laptop-accessories/hp-ink-tank-wireless-416-multi-function-color-prin/">  
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/ff/eb/ffebca21d95c1d9c4b21acfddf9d74fc.jpg"style="height:270px;width:180px;margin-left:-10px;margin-top:-5px;"></a>
+     <div style="margin-top:-270px;">
+      <a href="https://www.paiinternational.in/shop/details/laptop-accessories/hp-ink-tank-wireless-416-multi-function-color-prin/">
+        <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">22%</button></a>  
+    </div>
+    <div style="margin-top:230px;">
+      <h style="margin-left:35px;font-size:15px;font-style:normal;">
+        <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+            <p style="margin-left:20px;font-size:15px;font-weight:bold;margin-top:-20px;">HP Smart Tank 580</p>
+            <p style="margin-left:20px;margin-top:-15px;font-size:15px;font-weight:bold;">All-In-One-Printer...</p></a>
+            <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹16169.99</p>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+        </h>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹18848.00</p>
+            <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.916</p>
+            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button>
+        </div>
+    </div>
+    <div style="background-color:white;height:500px;width:170px;margin-left:790px;padding-left:10px;padding-top:10px;margin-top:-500px;">  
+        <a href="https://www.paiinternational.in/shop/details/laptop/hp-victus-15-fa0117tx-intel-core-i5-12th-gen-16gb/">
+        <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/8f/e3/8fe32e9d6f7e4ed8c31a5df2cddfc09d.jpg"style="height:270px;width:180px;margin-left:-10px;margin-top:-5px;"></a>
+     <div style="margin-top:-270px;">
+      <a href="https://www.paiinternational.in/shop/details/laptop/hp-victus-15-fa0117tx-intel-core-i5-12th-gen-16gb/">
+        <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">14%</button></a>  
+    </div>
+    <div style="margin-top:230px;">
+      <h style="margin-left:35px;font-size:15px;font-style:normal;">
+        <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+            <p style="margin-left:10px;font-size:15px;font-weight:bold;margin-top:-20px;">HP Victus Ryzen 5</p>
+            <p style="margin-left:10px;margin-top:-15px;font-size:15px;font-weight:bold;">Hexa Core 5600H - (8..</p></a>
+            <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹59400.00</p>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+        </h>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹75653.00</p>
+            <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.3257</p>
+            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button>
+        </div>
+    </div>
+    <div style="background-color:white;height:500px;width:170px;margin-left:990px;padding-left:10px;padding-top:10px;margin-top:-500px;">  
+        <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/13/a6/13a65b901dc7858dc8471c4c5401c6ca.jpg"style="height:270px;width:180px;margin-left:-10px;margin-top:-5px;">
+     <div style="margin-top:-270px;">
+        <button style="height:25px;width:38px;background-color:red;color:white;font-weight:600;border-color:red;">34%</button>  
+    </div>
+    <div style="margin-top:250px;">
+      <h style="margin-left:35px;font-size:15px;font-style:normal;">
+        <a href="https://www.paiinternational.in/shop/details/laptop/lenovo-ideapad-slim-3i-12th-gen-3962cms-intel-i5-l/"style="color:black;text-decoration:none;">
+            <p style="margin-left:20px;font-size:15px;font-weight:bold;margin-top:-20px;">Lenova IdeaPad 1</p>
+            <p style="margin-left:20px;margin-top:-15px;font-size:13px;font-weight:bold;">15AMN7 AMD RYZEN..</p></a>
+            <p style="font-weight:bold;color:#414544;margin-left:20px;font-size:18px;">₹38990.00</p>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:110px;margin-top:-40px;">MRP :</p>  
+        </h>
+            <p style="text-decoration:line-through;font-size:18px;color:#aeb8b5;margin-left:20px;">₹59389.00</p>
+            <p style="font-size:15px;color:#414544;font-weight:500;margin-top:10px;margin-left:10px;">EMI  Starts at Rs.2232</p>
+            <a href="https://www.paiinternational.in/shop/details/laptop/lenovo-ideapad-slim-3i-12th-gen-3962cms-intel-i5-l/">
+            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;width:160px;color:white;font-weight:700;">Offer available</button></a>
+        </div>
+    </div>
+    <div style="background-color:#7e2de0;height:500px;width:1180px;border-radius:20px;margin-top:130px;">
+      <div style="background-color:#f07b07;height:90px;width:60px;margin-left:100px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;margin-bottom:50px;">
+        <a href="https://www.paiinternational.in/">
+          <img src="https://static-pai413rrg32vz.cdn.e2enetworks.net/assets/pai/images/logo.png"style="height:40px;width:40px;margin-top:25px;margin-left:10px;"></a></div>
+       <h style="font-size:35px;font-style:normal;font-weight:600;color:white;margin-left:100px;">Slice of Pai</h>
+    </div>
+    <div style="margin-left:40px;">
+    <div style="background-color:white;height:350px;width:170px;margin-left:300px;padding-left:10px;padding-top:10px;margin-top:-440px;border-radius:10px;">  
+      <a href="https://www.paiinternational.in/shop/details/induction-cooker/pigeon-hard-anodised-pressure-cooker-25-l-inductio/">
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Pigeon-Hard-Anodised-Pressure-Cooker-2.5-L-Induction-Bottom-Pressure-Cooker._lXE2id5.jpg"style="height:270px;width:160px;margin-left:-5px;margin-top:-5px;">
+      <p style="font-style:normal;font-weight:600;margin-left:20px;font-size:18px;margin-top:8px;color:black;">Pigeon Hard</p><p style="font-style:normal;font-weight:600;margin-left:30px;font-size:18px;margin-top:-8px;color:black;">Anodised</p></a>
+   </div>
+    <div>
+    </div>
+    <div style="background-color:white;height:350px;width:170px;margin-left:500px;padding-left:10px;padding-top:10px;margin-top:-350px;border-radius:10px;">  
+      <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/lg-423-litres-2-star-frost-free-double-door-refrig/">
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/LG-423-Litres-2-Star-Frost-Free-Double-Door-Refrigerator-GL-N422SDSY.DDSZEB_JDCRdp3.jpg"style="height:270px;width:160px;margin-left:-5px;margin-top:-5px;">
+      <p style="font-style:normal;font-weight:600;margin-left:10px;font-size:18px;margin-top:8px;color:black;">LG 423 Litres 2</p><p style="font-style:normal;font-weight:600;margin-left:10px;font-size:18px;margin-top:-8px;color:black;">Star Frost Free</p></a>
+    </div>
+    <div>
+    </div>
+    <div style="background-color:white;height:350px;width:170px;margin-left:700px;padding-left:10px;padding-top:10px;margin-top:-350px;border-radius:10px;">  
+      <a href="https://www.paiinternational.in/shop/details/home-theater/lumiford-wireless-speaker-system-with-karoke-ts007/">
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Lumiford-WIRELESS-SPEAKER-SYSTEM-WITH-KAROKE-TS007-Built-in-Amplifier--Wireless-M_RE3sCkW.jpg"style="height:270px;width:160px;margin-left:-5px;margin-top:-5px;">
+      <p style="font-style:normal;font-weight:600;margin-left:30px;font-size:18px;margin-top:8px;color:black;">Lumiford</p><p style="font-style:normal;font-weight:600;margin-left:25px;font-size:18px;margin-top:-8px;color:black;">WIRELESS</p></a>
+    </div>
+    <div>
+    </div>
+    <div style="background-color:white;height:350px;width:170px;margin-left:900px;padding-left:10px;padding-top:10px;margin-top:-350px;border-radius:10px;">  
+      <a href="https://www.paiinternational.in/shop/details/bed/pai-furniture-queen-bed-bd701-5/">
+      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Pai-Furniture-Queen-Bed-BD701-5_lc3W0Sf.jpg"style="height:270px;width:160px;margin-left:-5px;margin-top:-5px;">
+      <p style="font-style:normal;font-weight:600;margin-left:20px;font-size:18px;margin-top:8px;color:black;">Pai Furniture</p><p style="font-style:normal;font-weight:600;margin-left:25px;font-size:18px;margin-top:-8px;color:black;">Queen Bed</p></a>
+    </div>
+    </div>
+    <div>
+      <div style="background-color:#fcfcf7;height:600px;width:1230px;border-radius:20px;margin-top:150px;margin-left:-30px;">
+      <div style="padding-top:30px;margin-left:40px;">
+        <h style="font-size:28px;font-weight:600;">Top Collection</h>
+       </div>
+       <a href="https://www.paiinternational.in/shop/details/direct-cool-refrigerator/lg-185-l-5-star-inverter-direct-cool-single-door-2/">
+       <div style="background-color:#e8e8e1;height:340px;width:260px;border-radius:20px;margin-left:30px;margin-top:30px;">
+        <div class="container"style="width:260px;padding:15px;border-color:white;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel"style="margin-top:-2px;">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/LG-185-L-5-Star-Inverter-Direct-Cool-Single-Door-Refrigerator-GL-D201ASEU.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/AO-Smith-Finesse-25-Litres-5-Star-Storage-Water-Geyser-White.jpg" alt="Chicago" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/V-Guard-VGSD-50-Stabilizer-Grey.jpg" alt="New york" style="width:100%;">
+            </div>
+           </div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+        <div class="carousel-inner"style="width:70vw;margin-left:260px;margin-top:-600px;">
+            <div class="carousel-item active">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:30px;">
+                      <a href="https://www.paiinternational.in/shop/details/led/panasonic-55-inches-led-tv-th-55mx740dx/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/47/8b/478b51f2ea5714510a58c462d62c6ff3.jpg"style="height:200px;width:300px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/led/panasonic-55-inches-led-tv-th-55mx740dx/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;margin-top:-20px;">Panasonic 108cm</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">(43 Inch)Full HD</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹28400.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹43989.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Panasonic</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1336</p>
+                                <a href="https://www.paiinternational.in/shop/details/led/panasonic-55-inches-led-tv-th-55mx740dx/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+             </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:25px;">
+                      <a href="https://www.paiinternational.in/shop/details/convection/lg-28-l-convection-microwave-oven-mj2887bfum-black/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/34/69/3469c7c3ac2a85c4ab6f6e7879008198.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/convection/lg-28-l-convection-microwave-oven-mj2887bfum-black/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;margin-top:-30px;">LG 28 L</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Convention</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹46000.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹75989.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:LG</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1975</p>
+                                <a href="https://www.paiinternational.in/shop/details/convection/lg-28-l-convection-microwave-oven-mj2887bfum-black/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:25px;">
+                        <a href="https://www.paiinternational.in/shop/details/led/lg-32-inch-hd-ready-smart-led-tv-32lq636bpsa/">
+                          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/08/67/086766c1816a34e53cebfd1a28305b8b.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/led/lg-32-inch-hd-ready-smart-led-tv-32lq636bpsa/style="style="color:black;text-decoration:none;">
+                                <p style="margin-left:-10px;font-size:18px;font-weight:bold;margin-top:-30px;">LG 50 Inch 4K</p>
+                                <p style="margin-left:-10px;font-size:18px;font-weight:bold;margin-top:-8px;">Ultra HD Smart</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹43800.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹72989.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:LG</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1942</p>
+                                <a href="https://www.paiinternational.in/shop/details/led/lg-32-inch-hd-ready-smart-led-tv-32lq636bpsa/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:25px;">
+                        <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/f0/d1/f0d1291b40e69fb1bf0a108e816fb93a.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/haier-refrigerator-bmr-237-l-mirror-glass-hrb-2872/"style="color:black;text-decoration:none;">
+                                <p style="font-size:15px;font-weight:bold;margin-left:25px;margin-top:-14px;">HAIER</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Refrigerator BMR</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹30900.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹38990.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Haier</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1263</p>
+                                <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/haier-refrigerator-bmr-237-l-mirror-glass-hrb-2872/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:20px;">
+                        <a href="https://www.paiinternational.in/shop/details/washing-machine/bosch-front-load-waj2446kin-80-kg-dark-lake/">
+                          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/09/7e/097e951a7cca72ded786fc5a2467956b.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/washing-machine/bosch-front-load-waj2446kin-80-kg-dark-lake/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;margin-top:-10px;">Bosch Front Load</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">WAJ2446 KIN 8.0</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹37989.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹56589.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Bosch</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1709</p>
+                                <a href="https://www.paiinternational.in/shop/details/washing-machine/bosch-front-load-waj2446kin-80-kg-dark-lake/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:20px;">
+                        <a href="https://www.paiinternational.in/shop/details/front-load/bosch-front-loader-65-kg-1200-rpm-washing-machine/">
+                          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/59/78/5978c0189472a251785f78ba01173abe.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/dishwasher/bosch-sms6hvi00i-14-place-dishwasher-with-glass-pr/"style="color:black;text-decoration:none;">
+                                <p style="font-size:15px;font-weight:bold;">Bosch </p>
+                                <p style="margin-left:-5px;margin-top:-8px;font-size:18px;font-weight:bold;margin-top:-10px;">SMS6HVI00I</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹57800.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹72989.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Bosch</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.2405</p>
+                                <a href="https://www.paiinternational.in/shop/details/dishwasher/bosch-sms6hvi00i-14-place-dishwasher-with-glass-pr/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:20px;">
+                        <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/godrej-272-l-2-star-frost-free-refrigerator-rt-eon/">
+                        <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/51/6b/516b9c828e81b3ddb59b1c6c484209e2.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/godrej-272-l-2-star-frost-free-refrigerator-rt-eon/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;margin-top:-10px;">Samsung 385l</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Twin Cooling</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹43899.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹64990.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Samsung</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.990</p>
+                                <a href="https://www.paiinternational.in/shop/details/frost-free-refrigerator/godrej-272-l-2-star-frost-free-refrigerator-rt-eon/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:400px;margin-left:20px;">
+                        <a href="https://www.paiinternational.in/shop/details/front-load/ifb-8-kg-senator-wss-steam-fully-automatic-frontlo/">
+                          <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/29/32/2932bb9a93ecfc3947d9087907997907.jpg"style="height:200px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/front-load/ifb-8-kg-senator-wss-steam-fully-automatic-frontlo/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;margin-top:-20px;">IFB 8 KG 5 Star</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Front Load</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹38889.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹43990.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:IFB</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1538</p>
+                                <a href="https://www.paiinternational.in/shop/details/front-load/ifb-8-kg-senator-wss-steam-fully-automatic-frontlo/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+  $('.carousel .carousel-item').each(function () {
+var minPerSlide = 4;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i = 0; i < minPerSlide; i++) { next=next.next(); if (!next.length) { next=$(this).siblings(':first'); } next.children(':first-child').clone().appendTo($(this)); } });
+</script>
+<a href="https://www.paiinternational.in/shop/details/electrical-kettle/prestige-pkg-ss-41573-electric-kettle-17-ltrs/">
+<div style="background-color:#fcfcf7;height:600px;width:1230px;border-radius:20px;margin-top:-50px;">
+  <div style="padding-top:30px;margin-left:40px;">
+    <h style="font-size:28px;font-weight:600;color:black;">Kitchen Appliances</h>
+   </div>
+   <div style="background-color:#e8e8e1;height:340px;width:260px;border-radius:20px;margin-left:40px;margin-top:30px;">
+    <div class="container"style="width:260px;padding:15px;border-color:white;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel"style="margin-top:-2px;">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+  
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Prestige-PKG-SS-41573-Electric-Kettle--1.7-Ltrs.jpg" alt="Los Angeles" style="width:100%;">
+        </div>
+  
+        <div class="item">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Butterfly-Quadro-4B-Glass-Manual-Gas-Stove-4-Burners.jpg" alt="Chicago" style="width:100%;">
+        </div>
+      
+        <div class="item">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Maharaja-Wet-Grinder-GrindstoneWITH-BIS-CORD--PLUG.jpg" alt="New york" style="width:100%;">
+        </div>
+       </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+<div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+    <div class="carousel-inner"style="width:70vw;margin-left:280px;margin-top:-600px;">
+        <div class="carousel-item active">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:30px;">
+                  <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/60/d2/60d21250a45ec1f0b44267bbecb44cdd.jpg"style="height:270px;width:300px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Prestige Swach</p>
+                            <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Glass Top Table</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹1710.</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹19998.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Presstige</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.256</p>
+                            <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+         </div>
+        </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                  <a href="https://www.paiinternational.in/shop/details/hobs-chimney/faber-hood-zenith-fl-sc-ac-bk-60-auto-clean-wall-2/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/e6/dc/e6dc2a8db36279cc67e76016bf0cffc3.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/hobs-chimney/faber-hood-zenith-fl-sc-ac-bk-60-auto-clean-wall-2/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Faber HOOD</p>
+                            <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Premia 3D Plus</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹19989.00</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹31989.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Faber</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.506</p>
+                            <a href="https://www.paiinternational.in/shop/details/hobs-chimney/faber-hood-zenith-fl-sc-ac-bk-60-auto-clean-wall-2/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                  <a href="https://www.paiinternational.in/shop/details/pressure-cooker/prestige-popular-svachh-combi-pack-5l-3l-10193-p/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/2c/ab/2cab2fa721802e20dfbf32ae2bdbd8ae.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/pressure-cooker/prestige-popular-svachh-combi-pack-5l-3l-10193-p/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Prestige Svachh</p>
+                            <p style="margin-left:-25px;font-size:18px;font-weight:bold;margin-top:-8px;">Pressure Cooker 5</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹2140.00</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹2520.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Prestige</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.456</p>
+                            <a href="https://www.paiinternational.in/shop/details/pressure-cooker/prestige-popular-svachh-combi-pack-5l-3l-10193-p/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                  <a href="https://www.paiinternational.in/shop/details/coffemaker/prestige-electric-kettle-pkoss-1500watts-steel-15l/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/bf/87/bf870d3ab059cad9384dfff62dbbc885.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/coffemaker/prestige-electric-kettle-pkoss-1500watts-steel-15l/"style="color:black;text-decoration:none;">
+                            <p style="font-size:18px;font-weight:bold;margin-left:-20px;">Prestige Electric</p>
+                            <p style="margin-left:-15px;margin-top:-8px;font-size:18px;font-weight:bold;">Kettle PKOSS-</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹892.00</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹1444.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Prestige</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.50</p>
+                            <a href="https://www.paiinternational.in/shop/details/coffemaker/prestige-electric-kettle-pkoss-1500watts-steel-15l/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                  <a href="https://www.paiinternational.in/shop/details/electric-cooker/panasonic-extra-pan-electric-rice-cooker-multicolo/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/24/1e/241e961849a20ad5e06400dab7318e06.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/electric-cooker/panasonic-extra-pan-electric-rice-cooker-multicolo/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Panasonic Extra</p>
+                            <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">PAN Electric Rice</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹3198.99</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹3999.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Panasonic</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.234</p>
+                            <a href="https://www.paiinternational.in/shop/details/electric-cooker/panasonic-extra-pan-electric-rice-cooker-multicolo/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                  <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/61/be/61be862ed50575535994c622e0ad00c6.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/"style="color:black;text-decoration:none;">
+                            <p style="font-size:18px;font-weight:bold;margin-left:10px;">Butterfly Magnum</p>
+                            <p style="margin-left:-15px;margin-top:-8px;font-size:18px;font-weight:bold;">1.2 HP Mixer</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹6789.99</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹8798.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Butterfly</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.528</p>
+                           <a href="https://www.paiinternational.in/shop/categories/home-appliances-2/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                  <a href="https://www.paiinternational.in/shop/details/gas-stove/butterfly-stove-2b-radiant-jumbo-gt/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/4e/ce/4eceb7a24d42b4546a581a5411484590.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/gas-stove/butterfly-stove-2b-radiant-jumbo-gt/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Butterfly stove 2B</p>
+                            <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Radient Jumbo</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹5699.00</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹7520.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Prestige</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.456</p>
+                            <a href="https://www.paiinternational.in/shop/details/gas-stove/butterfly-stove-2b-radiant-jumbo-gt/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                  <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/">  
+                  <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/60/d2/60d21250a45ec1f0b44267bbecb44cdd.jpg"style="height:270px;width:380px;"></a>
+                    <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                        <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/"style="color:black;text-decoration:none;">
+                            <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Prestige Royale</p>
+                            <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Plus Glass Manual</p></a>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                            <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹75900.00</p></h>
+                            <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹12394.00</p>
+                            <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:Prestige</p>
+                            <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1042</p>
+                            <a href="https://www.paiinternational.in/shop/details/gas-stove/prestige-royale-plus-glass-manual-gas-stove-3-burn/">
+                            <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+$('.carousel .carousel-item').each(function () {
+var minPerSlide = 4;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i = 0; i < minPerSlide; i++) { next=next.next(); if (!next.length) { next=$(this).siblings(':first'); } next.children(':first-child').clone().appendTo($(this)); } });
+</script>
+<a href="https://www.paiinternational.in/shop/details/dressing-table/pai-furniture-bed-room-dresser-pfdr26/">
+<div style="background-color:#fcfcf7;height:600px;width:1230px;border-radius:20px;margin-top:-50px;">
+      <div style="padding-top:30px;margin-left:40px;">
+        <h style="font-size:28px;font-weight:600;color:black;">Modular Furniture</h>
+       </div>
+       <div style="background-color:#e8e8e1;height:340px;width:260px;border-radius:20px;margin-left:40px;margin-top:30px;">
+        <div class="container"style="width:260px;padding:15px;border-color:white;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel"style="margin-top:-2px;">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Pai-Furniture-Office-Set-Chairs-PFCR1001.jpghttps://media-paijju09yhv08.cdn.e2enetworks.net/images/Pai-Furniture-Office-Set-Chairs-PFCR1001.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Pai-Furniture-Bed-room-set-chair-PFCR1218.jpg" alt="Chicago" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/images/Pai-Furniture-Bed-Room-Dresser-PFDR26.jpg" alt="New york" style="width:100%;">
+            </div>
+           </div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
+        <div class="carousel-inner"style="width:70vw;margin-left:280px;margin-top:-600px;">
+            <div class="carousel-item active">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:30px;">
+                      <a href="https://www.paiinternational.in/shop/details/bed/pai-furniture-queen-size-bed-pfbd37-5/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/fd/2b/fd2b96a778ed08f84b4933b3c5ee645b.jpg"style="height:270px;width:300px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/bed/pai-furniture-queen-size-bed-pfbd37-5/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-25px;margin-top:-8px;font-size:18px;font-weight:bold;">Queen Size Bed</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹46715.00/p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹72406.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1056</p>
+                                <a href="https://www.paiinternational.in/shop/details/bed/pai-furniture-queen-size-bed-pfbd37-5/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+             </div>
+            </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                      <a href="https://www.paiinternational.in/shop/details/living-television-wall-units/pai-furniture-tv-unit-pftv017/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/89/f7/89f7e66f43c1a90c52304ab01ed3942f.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/living-television-wall-units/pai-furniture-tv-unit-pftv017/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-25px;margin-top:-8px;font-size:18px;font-weight:bold;">TV Unit</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹24139.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹37415.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.4056</p>
+                                <a href="https://www.paiinternational.in/shop/details/living-television-wall-units/pai-furniture-tv-unit-pftv017/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                      <a href="https://www.paiinternational.in/shop/details/coffe-table/pai-furniture-coffee-table-pfct1001/"> 
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/d7/b7/d7b7e98c22baefab6b7f3ab992799954.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/coffe-table/pai-furniture-coffee-table-pfct1001/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-25px;font-size:18px;font-weight:bold;margin-top:-8px;">Coffee Table</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹9490.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹117784.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1389</p>
+                                <a href="https://www.paiinternational.in/shop/details/coffe-table/pai-furniture-coffee-table-pfct1001/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:25px;">
+                      <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-pfsf1229-sofa-set/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/4c/41/4c4117a72f64ebbf54d20d1817271758.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-pfsf1229-sofa-set/"style="color:black;text-decoration:none;">
+                                <p style="font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">PFSF1229 Sofa</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹75989.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹117784.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1044</p>
+                                <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-pfsf1229-sofa-set/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                      <a href="https://www.paiinternational.in/shop/details/wardrobes/pai-furniture-wardrobe-pfwr22-3/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/a7/a9/a7a9859f33db60653a9b2dfbd146bc8b.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/wardrobes/pai-furniture-wardrobe-pfwr22-3/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Wadrobe</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹33590.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹52064.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1056</p>
+                                <a href="https://www.paiinternational.in/shop/details/wardrobes/pai-furniture-wardrobe-pfwr22-3/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                      <a href="https://www.paiinternational.in/shop/details/dining-set/pai-furniture-4-seater-dining-tablepfdt205-4/"> 
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/0d/3f/0d3f193da166c74c2fa6e79bb1c06a48.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/dining-set/pai-furniture-4-seater-dining-tablepfdt205-4/"style="color:black;text-decoration:none;">
+                                <p style="font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-5px;margin-top:-8px;font-size:18px;font-weight:bold;">4 Seater Dining</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹22990.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹36784.00/p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.2056</p>
+                                <a href="https://www.paiinternational.in/shop/details/dining-set/pai-furniture-4-seater-dining-tablepfdt205-4/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                      <a href="https://www.paiinternational.in/shop/details/dining-chair-2/pai-furniture-sheesham-wood-dining-chair-pfcr62-ab/">  
+                      <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/ce/44/ce44590038c9577c294a239199cb13e1.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/dining-chair-2/pai-furniture-sheesham-wood-dining-chair-pfcr62-ab/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Seesham Wood</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹4990.00</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹7984.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.589</p>
+                                <a href="https://www.paiinternational.in/shop/details/dining-chair-2/pai-furniture-sheesham-wood-dining-chair-pfcr62-ab/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3">
+                    <div class="card card-body"style="width:200px;height:500px;margin-left:20px;">
+                        <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-apollo-cornor-sofa-set-pfsf228-nm/">
+                        <img class="img-fluid" src="https://media-paijju09yhv08.cdn.e2enetworks.net/cache/08/ad/08ad611635d382de8062317775175341.jpg"style="height:270px;width:380px;"></a>
+                        <h style="margin-left:35px;font-size:15px;font-style:normal;">
+                            <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-apollo-cornor-sofa-set-pfsf228-nm/"style="color:black;text-decoration:none;">
+                                <p style="margin-left:-20px;font-size:18px;font-weight:bold;">Pai Furniture</p>
+                                <p style="margin-left:-20px;margin-top:-8px;font-size:18px;font-weight:bold;">Apollo Cornor Sofa</p></a>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:50px;">MRP :</p>
+                                <p style="font-weight:bold;margin-left:-30px;color:#414544;margin-top:-20px;">₹58489.99</p></h>
+                                <p style="text-decoration:line-through;font-size:13px;color:#aeb8b5;margin-left:80px;margin-top:-20px;">₹90659.00</p>
+                                <p style="font-size:15px;font-weight:bold;color:#4a4f4e">Brand:PAI</p>
+                                <p style="font-size:13px;color:#414544;font-weight:500;margin-top:-10px;">EMI  Starts at Rs.1042</p>
+                                <a href="https://www.paiinternational.in/shop/details/sofa/pai-furniture-apollo-cornor-sofa-set-pfsf228-nm/">
+                                <button style="background-color:#f71c0c;border-radius:4px;border-width:0px;height:40px;color:white;font-weight:700;">Offer available</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script>
+  $('.carousel .carousel-item').each(function () {
+var minPerSlide = 4;
+var next = $(this).next();
+if (!next.length) {
+next = $(this).siblings(':first');
+}
+next.children(':first-child').clone().appendTo($(this));
+
+for (var i = 0; i < minPerSlide; i++) { next=next.next(); if (!next.length) { next=$(this).siblings(':first'); } next.children(':first-child').clone().appendTo($(this)); } });
+</script>
+</div>
+<div id="container"style="margin-top:-100px;margin-left:-40px">
+  <div id="slider-container">
+    <span onclick="slideRight()" class="btn"style="margin-top:60px;"></span>
+      <div id="slider" style="margin-top:30px;margin-right:40px;">
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/oneplus-zone/">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/logo-b2c.jpg"style="height:70px;width:70px;margin-top:40px">
+        </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/samsung-store/">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/samsung.jpg"style="height:70px;width:70px;margin-top:40px">
+          </a>
+        </div>
+        <div class="slide">
+        <a href="https://www.paiinternational.in/d/panasonic-deals/">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/panasonic.jpg"style="height:70px;width:70px;margin-top:40px">
+        </a>
+        </div>
+        <div class="slide">
+        <a href="https://www.paiinternational.in/d/oppo-smart-phones/">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/oppo.jpg"style="height:70px;width:70px;margin-top:40px">
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/applestore/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/apple_UzDSGTB_8qgRWXu.jpg"style="height:70px;width:70px;margin-bottom:40px">
+          </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/xiaomi/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/mi-logo.jpg"style="height:70px;width:70px;margin-bottom:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/henryled/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/henry.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/lloyd/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/lloyed.jpg"style="height:70px;width:70px;margin-top:40px">
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/bosch/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/bosch.jpg"style="height:70px;width:70px;margin-bottom:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/hp/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/hp.jpg"style="height:70px;width:70px;margin-top:40px">
+             </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/sony-store/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/sony_1.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/haier-zone/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/haier.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/godrej-deals/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/godrej.jpg"style="height:70px;width:70px;margin-top:40px">
+             </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/whirlpool-deals/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/Whirlpool.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/tcltelevision/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/TCL-1.png"style="height:70px;width:70px;margin-top:40px">
+             </a>
+          </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/vivo-smart-phone/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/vivo.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/lenovo-series/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/LENOVO-100.png"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/ifb-deals/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/ifb_vrvPcqh.jpg"style="height:70px;width:70px;margin-top:40px">
+             </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/dell-store/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/dell_aichZat.jpg"style="height:70px;width:70px;margin-top:40px">
+             </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/lg-store/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/logo-b2c.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/oneplus-zone/">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/logo-b2c.jpg"style="height:70px;width:70px;margin-top:40px">
+        </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/samsung-store/">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/samsung.jpg"style="height:70px;width:70px;margin-top:40px">
+          </a>
+        </div>
+        <div class="slide">
+        <a href="https://www.paiinternational.in/d/panasonic-deals/">
+        <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/panasonic.jpg"style="height:70px;width:70px;margin-top:40px">
+        </a>
+        </div>
+        <div class="slide">
+        <a href="https://www.paiinternational.in/d/oppo-smart-phones/">
+          <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/oppo.jpg"style="height:70px;width:70px;margin-top:40px">
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/applestore/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/apple_UzDSGTB_8qgRWXu.jpg"style="height:70px;width:70px;margin-bottom:40px">
+          </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/xiaomi/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/mi-logo.jpg"style="height:70px;width:70px;margin-bottom:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/henryled/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/henry.jpg"style="height:70px;width:70px;margin-top:40px">
+            </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/lloyd/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/lloyed.jpg"style="height:70px;width:70px;margin-top:40px">
+        </div>
+        <div class="slide">
+          <a href="https://www.paiinternational.in/d/bosch/">
+            <img src="https://media-paijju09yhv08.cdn.e2enetworks.net/brand_images/bosch.jpg"style="height:70px;width:70px;margin-bottom:40px">
+            </a>
+        </div>
+     </div>
+    <span onclick="slideLeft()" class="btn"style="margin-top:60px;"></span>
+  </div>
+        <script>
+          var container = document.getElementById('container')
+  var slider = document.getElementById('slider');
+  var slides = document.getElementsByClassName('slide').length;
+  var buttons = document.getElementsByClassName('btn');
+  
+  
+  var currentPosition = 0;
+  var currentMargin = 0;
+  var slidesPerPage = 4;
+  var slidesCount = slides - slidesPerPage;
+  var containerWidth = container.offsetWidth;
+  var prevKeyActive = false;
+  var nextKeyActive = true;
+  
+  window.addEventListener("resize", checkWidth);
+  
+  function checkWidth() {
+      containerWidth = container.offsetWidth;
+      setParams(containerWidth);
+  }
+  
+  function setParams(w) {
+      if (w < 551) {
+          slidesPerPage = 1;
+      } else {
+          if (w < 901) {
+              slidesPerPage = 2;
+          } else {
+              if (w < 1101) {
+                  slidesPerPage = 3;
+              } else {
+                  slidesPerPage = 4;
+              }
+          }
+      }
+      slidesCount = slides - slidesPerPage;
+      if (currentPosition > slidesCount) {
+          currentPosition -= slidesPerPage;
+      };
+      currentMargin = - currentPosition * (100 / slidesPerPage);
+      slider.style.marginLeft = currentMargin + '%';
+      if (currentPosition > 0) {
+          buttons[0].classList.remove('inactive');
+      }
+      if (currentPosition < slidesCount) {
+          buttons[1].classList.remove('inactive');
+      }
+      if (currentPosition >= slidesCount) {
+          buttons[1].classList.add('inactive');
+      }
+  }
+  
+  setParams();
+  
+  function slideRight() {
+      if (currentPosition != 0) {
+          slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+          currentMargin += (100 / slidesPerPage);
+          currentPosition--;
+      };
+      if (currentPosition === 0) {
+          buttons[0].classList.add('inactive');
+      }
+      if (currentPosition < slidesCount) {
+          buttons[1].classList.remove('inactive');
+      }
+  };
+  
+  function slideLeft() {
+      if (currentPosition != slidesCount) {
+          slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+          currentMargin -= (100 / slidesPerPage);
+          currentPosition++;
+      };
+      if (currentPosition == slidesCount) {
+          buttons[1].classList.add('inactive');
+      }
+      if (currentPosition > 0) {
+          buttons[0].classList.remove('inactive');
+      }
+  };
+        </script>
+<footer class="text-center text-lg-start"style="background-color:#400aab;width:1300px;height:500px;margin-left:-10px;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div style="margin-top:40px;margin-left:-20px;">
+        <h5 style="color:white;font-weight:600;">About</h5><br>
+
+        <ul class="list-unstyled mb-0"style="color:white;">
+          <li>
+            <a href="https://www.paiinternational.in/d/stories/" class="text-light">Pai Stories</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/contact-us/" class="text-light">Contact Us</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/about-us/" class="text-light">About Us</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/lowestprice-challenge/" class="text-light">Pai Lowest Price</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/lowestprice-challenge/" class="text-light">Challenge</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/d/careers/" class="text-light">Careers</a>
+          </li><br>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div style="margin-left:160px;margin-top:-300px;">
+        <h5 style="color:white;font-weight:600;">Help</h5><br>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.paiinternational.in/cancellation-policy/" class="text-light">Concellation and</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/cancellation-policy/" class="text-light">Return</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/ewaste-management/" class="text-light">eWaste Management</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/shipping/" class="text-light">Shipping</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div style="margin-left:360px;margin-top:-300px;">
+        <h5 style="color:white;font-weight:600;">Policy</h5><br>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="https://www.paiinternational.in/returnpolicy/" class="text-light">Return Policy</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/privacy-policy/" class="text-light">Privacy</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/terms-of-use/" class="text-light">Terms Of Use</a>
+          </li><br>
+          <li>
+            <a href="https://www.paiinternational.in/Pai-Service-Contract/" class="text-light">Pai Service Contract</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+      
+      <!--Grid column-->
+      <div style="margin-left:560px;margin-top:-300px;">
+        <h5 style="color:white;font-weight:600;">Social</h5><br>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="https://www.facebook.com/paiinternational/" class="text-light">Facebook</a>
+          </li><br>
+          <li>
+            <a href="https://twitter.com/paielectronics?lang=en" class="text-light">Twitter</a>
+          </li><br>
+          <li>
+            <a href="https://www.youtube.com/user/PaiInternationalind" class="text-light">Youtube</a>
+          </li><br>
+          <li>
+            <a href="https://www.instagram.com/pai.international/" class="text-light">Instagram</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+      <div></div>
+      <!--Grid column-->
+      <div style="margin-left:750px;margin-top:-300px;">
+        <h5 style="color:white;font-weight:600;">Mail Us</h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="https://www.paiinternational.in/" class="text-light">helpline@paiinternational.in</a>
+          </li><br>
+          <h5 style="color:white;font-weight:600;">Phone</h5>
+          <li>
+            <a href="#!" class="text-light">Banglore:080 42464343<br>(10AM to 7PM)</a>
+          </li>
+          <li>
+            <a href="#!" class="text-light">Hyderabad:040 42464343<br>(10AM to 7PM)</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div style="margin-left:980px;margin-top:-300px;">
+        <h5 style="color:white;font-weight:600;">Registered Office <br>Address</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" class="text-light">Pai International</a>
+          </li><br>
+          <li>
+            <a href="#!" class="text-light">Electronic Ltd</a>
+          </li><br>
+          <li>
+            <a href="#!" class="text-light"># 28/1A,100 Feet Road,</a>
+          </li><br>
+          <li>
+            <a href="#!" class="text-light">Near CMH Road,</a>
+          </li><br>
+          <li>
+            <a href="#!" class="text-light">Indiranagar,Banglore-</a>
+          </li><br>
+          <li>
+            <a href="#!" class="text-light">560 038</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <hr style="margin-top:20px;">
+  <div style="margin-top:50px;">
+    <h style="color:white;margin-left:90px;">Pai International 2023.All rights reserved</h>
+  </div>
+  <div style="margin-left:500px;margin-top:-30px;">
+    <img src="data:image/png;base64,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"style="height:40px;width:60px;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAABtlBMVEX/////mQDMAADIAAAAAGb/nAD/ngAAAGj/lwD/kQD/mADNAAD/lAAAAGfRAAD/lQAAAFrRGwDVAAAAAGAAAFzeTADvdQAAAGLTJwDvxMQAAFZ6AEQeHm/4iADnpqb88/Pg4Of56enW1uFwAEr/4cX99/ejYkG4uMv/+vTu7vP/8+jPIyPWVlbsuLgAAE+MVEr/0KP/w4f019fRNjb/pTrZZGTde3v/2rf/unPURkbLy9mGAEHqsrL/zZz34uL/r1b/6NPikZH/tWZfX4+dnbjCABCPj65jAE7abGzYXl7/qknkmZnuwcH/uG3/7Nn/ozFwcJq6ABlJAFeQADmtACZISIKDg6YsAF/rbQDdhSKATU1SUofghYX/wIBoaJQwMHbvkBM0H1+oqMDMei2hAC5KSoO8vM6XADVkPFXiVwDaQwrNm327ZxRxOD1HIVBWNFhwQlC/Pkg7AFs2AEezaziWVj2XhpfUfyfJh1eml6WkABOTcpBoADeuZnkAAEUlJXBSAEvgwq1+QTp/AClJO3dJAEGSABzDtbq6jZ2VSWdaSXMqKnOtTV9uNGWwajpOG0KfAAg+JV23mhSoAAAZtElEQVR4nO1dCXvbRnqmiIMEAQI0yQQRrZA6LUqmZZI6KMrUfVqSdVmWIps6bPnKbuK4jr3uJm7t7SZN27S7zT/uDI45AJDiCTBP932exCIIYgYv5jtn8I3P9w94gVQfRMrFFtPpUYh02sU2G0Bfd3Jxo3jTz2D4bxY3FpPdc+1qcmcwm1va5CQBQ+I2l3LZwdF2Ndko8smpcciIM8A34xvJfGubXMje2wWESEowGOoiEQoqigRI253OLrS2yYaR3ypWJIcmanyxuzVNDuZ2BUlRaGqsCCmAp4ncYGuabBip0t2a6ME0ZZJ9zTU5mt0E9FRnByMIeJrPeiZ1Q8liPfQgmsaTDSvy0VkwfII10oNokoSJrBd6vPtuI/wYLGVuNdJkYVOoefjYWJovtJqB6kht+RsnSCPJX65T4EZPpbrHD82SknNP4OY2muPHYOluHTZuYV5QmuBHQ0gRlnbaxwqBfKYVBGkkFWskaXBCaGYAYSjC5kJbyYGYaxlBNZO0sNsigiCCwmZ7R1KqJSJGkZS5QieNbraQIJ2k+TbqpMVWE6SRNFWlxfR0iwmCUIRcmwjqbgM/OkqVmsxKTStpZ5KC7XABhprwg64CU3SUttEJoS0EAYSE+ZY7k7faxo9OUtLe5GwbZAwjKLR4IE22bwgZHBWH6BbTE1IbCYJo6UDKt5kfHVQaoNDWIaRDURZaxdBWu4eQDqaMmzxtmxYiEWqVaWups1gVprC1X8hMSJstICh10y2CILQU7o7SfiEzoXQ17Ue6o4YQmG6ohhrLeDSGkLTQHEPbrgmZyVEy64oaIjhqzvon3WbI77/WHn+6GoTZxhlyyZQRYD7jXWcIcNSwYWtL1NqBDDXOkQcMfe0NQ41y5IGUecZQYxy5r6m9ZAhwlK2XIdetvWd6CHFUp+3Pu2/t/8BzFNznaKEehlKuE+S/9qUFktskhaR6YhFX4zIDjAV+133IIFc7Q3c9YMiOL1zXTcp8rQx5EHY4wn39XWso4oGqdgbzues6u0aV7TUzGIxbmTWEULAWhia9JoZAZ6oj933GKvDA4b7agxzymhUazJeuqyPpqqkj98Ws6qhlrrlO0VWi1u2+mH3NV4P7cUiXUH2RrfsMMR6QUB2hrmoMbbnPkPu+z5WQqjiQQ+4PIvfNeg0QKmvsDdcZ8sBi1QDlXiWG+rxIEnlNhyOESmkR9wN8xuVpxVoRrGD45/4xiBAE52W1HniNgiUZWxFuU+Q8jDzQRLZMYyV4kBVx0kZT7jNUMzyI+KftDHngE9UO5ku3KXLyjZJe01AV7udoHVzsVa9ZqArGbYYcIjUPQvx6wHzlvsK2Bvzuxx71wQOFvWShqLMHkSd+uEAzdMuDRFF9+Nr9DC2dxc64z9CXZI2GGuA2Q1YP24Nln50anmEIHsuZ+4JTNyhJ8yCX1oEJWSuozJrrDPn9LWAoqEgQ7XsdQsEM0QsdqEU+jkfrqhPijKYzRbAYSC5bGCxkTzeFRqtAOFzVgLa4icgaUfFZspvAIjrcTaHptECT3rIiLJHO78LsbvOlDuBlTwcN5ODlFLxElMzIMlTNExSXbNB+VLMUNZfWDwnTtjh8dLoFHEmI9yy8GmH2cdflqEw1bFAUlS2Vh8YbpcZE1SnYK2Zmg7tOadNs0xRxfAgl0nTCJfMjTlrLL9RHDhRFYzFLfxpURot6lbW+1LZ8rW6IuhHkhD86EGTeVDMMnYQT6GoTmnJDuUf89rQ8oB5R7WqKXNxn9+juNJbEFfHrr42sFdRjEP6bNUeGfJvNGjbuMnyOrqY788gzKqNeRA9iT+wUydfjM3R3GkqdiAyDXsdvSJdBK8h/Sz9DjObl7IaKRsKoTpFivvaAA7SoGu+3UxQ9tspZQynKqKqiCzSky0DMwr06q8BQGgdxsOAcQLBGRyAU0k/kH8ZWzKsN6ksIg+ars6gPIhNIjNgosssZGgTAQRqfnCqXyxtOJecYf3FyY2pjMjMOTxSZ8DN0AfpkhsksJpPJcqbaYiOg4zn+VU8FhnwLOkWweFpwc+k0lztdgjXpEBEK4fAosLihfjgoCV0TuwJ0Gfjv4s/Nq2XNr/WPKdQv8TCg0g1Diuxy5itqfR5f7CY8hPwifUeZW2SVi76yeIj13NAWYMQcvMz4Nr4IWXYjk9RRgknjEmjq5etIL92R/pkZ40gB3pQkbM4uEP7AwrTpLimzWR2nSpewtGCcHxTmB7XTd04FhU/gq58aPzOS/Ni3lu+ztEHTjJ1dzrRBsGUvGldGV2LuWquALMr3LXrO9Ma2qaN5/OYAKpLBMJPwnyexGKWqZx4lIvF4JPFgBQx96Osp9nWK6SV9dKGovSDpGdfdEHwFHc+WpeelADZopu43/OsqBg1S5CBnmkGz9caH1ThjLyc3Ka9b9Jw+oWAthIFUo4x8sT6jfk+PSj6roWcRNhAIhFlWjUX+mF4KctyEU59mAUccx5sfc/pdDwq2heiFBJZiU0ANk4bXXZEGbcTonV++Y8oZUlPdjBj9J6fuGFkVxqHE5c3omwjNhnZqxuEimi6X178329suav/0R7A6BZ1hj2//7e2N268gS4ELheNP3v3JsU85iTt5hb6a0B3opaB9bewwEiGk+xWdRcLmEwZN11yAIiRnSJcBg7Yfs44sA5r0bDl8wUTZOHVAG4pFp2toypE4PalTexSL4HNGXp3w2oIAvuvtb4EAz71nAySDJHa5tyqSUMOMC06rh3vNPxYQRafaZ7TcgTJoT4z7AHJmCB/WA1PyfZXWKwhAMuWnDsf7/PvsMnUECqXofJGk1hfkxxl9UsnH8s94KQTHv/+O594FWJtVMVAI3o4NG38btYwLivBn55P1r83XBoL6NEgRqSLCoPXrTyTFYDnDHSzKA5W64xuXf3BiL+9/qtJucQnQUKnYHOyLVQP2RyK4zQL16gMYSvzrMBsZ8Tkj9NKiBn3T0k8VztWQM3WR4RghE0IatGGTouixQdsTPIyZ6AHqzsgI3bFFJmJTwAAl+Q56ksaJfvlH/Glo5nkv/jQF+qJaxGYlTihrm1vIPw5jybT2af444aPBjfX6qmDeDGZCu9pnR4O2pndwyI/k7AF6hn1MFNqWmZWz83giEYkk4o/w8y19wIGOb+asJx5nz5/9SzkDDBrdqw35A76RvUQ8njgn7IE8EHtOne5bjmPHumB/fybAqg98Q8/Xlj9GQJ8SidgZbi4XC9PXGqXDmJnnlkHWhZ6A7jsiZwYYNPSglw2pEE05G/lXfAN+JvBxORGPqWwY2BNodsdQG90JLCDDYyoLoLKHItD6WNnuxdVPsvgD7uZ5LBBg2Rga/Ck4TvEtalDjWIBtISt3Ail6kIiroE+wR6BVrFf/Ere4e7+MEcNsJRKJR8JUaziYkSwUsRF0p6xBkYzkbAxdIOk/hIY2cHzwaX19/dMx+BBDt9ufwCrn2fGbN8fQeVkV/XIAex3nanhAjuJurn24f38dcJRA/QTGlTBfUO6H47hzadukGvcWtBJgH798/fDhw5cfobfExtHz/iVBqsGRlSd7hJ5bjsPHo5KKbAdfX6AoggYNqZEx46KrppydY/mZku+wAy/25Wg0Ksvg/6sHAUzRMNGdTBRCZvZF6IBigwY6dSf64gH67IeX2QfKBI2TcX/gI3FXP0VicRbrk0GbnHG3e25fXqDk28VvgCN8tZUEoQZnErEYoYnW/u3t29tg3JGOOyHHGkVo7RUwaKx5Un/CuOe/Gragd4wwaP5VwI2o+9Ew1y8mxlADaxHclhHaiOBUmTBo0CMSoxF0ByVGNxZhfFPFfZYI6fdiUHawPsnZEx8XvOkFwEBWEiKJyBhSZnsJrGtGImDIYPpHvwQ/5EOksqeub6GINGgmRW8M1v4cwQYGJsd0fjJb2/m+oaGhkX40TPcIreqbQ0XD5etYz3UD0uSncfST8upNDT3Ytx9/QRi0kcibg+OwikfdUsXsWVCSlmYHd4D3M9Lbj0TiJyJ/caSGHxMjRo9XuYsAS5xDXF+LYzFFAyoxFoxBY1I1gBMFRsqRGXes6/2TSiULzNA9+gm7Jknts2r/LQZgFBu0P60CcQ2rmPrdCpkgGLg7XS1CtBV/y98gnDpDpIBbRZgH4vq0LqIMWtygyDBV+Z/xFfRYdbXCVgPfhyO0BdVHUpRwTWC2SVYr5cY0yJ8IFwEIKtCTOCXoCzlTJE04r5YeSeBE1TBQWI9xV8xIA6h7otuENbBQRBi0A7NDBv9TEXxZOAgYy6QRQupDwHbzMFEtB7CsF6Hes3qGFPpkglE9rUdYBJ/jKhGuYvEYpFgBTkNdocCv6OOsoXWA04BvfrQSReIqzpcM/awa9se4uD+MTfZUterC+X8HUm0NTrYZyqBZVJMDukXCRYCPRDwMEArEgSKO/+aXSlcbTmCPqivEXRKWAE2bXASwmJAGUzJ7bBi0ALpRRJFObfcqcYdFv+iUwtBxiwFOhtXr8y2KT7HjDnVZ9KBikAexRbY3qXeOoMiurbmT40ppf6BY8TMDA4S7QQSLONIgIvhZwmDq3vVNZNBQt0rr9HzaJBmD+uUf6C6QEdGWfB36gNYhAiI09CTzWibTGlhS2KDaMyjCHEzYIrS3lBsFxIDs0xm+ezBAyCw+vtIFkZK+hykyYrSi3aCV1+kMrUjIRcr/A6FGnjyKgSgNBycbfvkYjqNlOpAsr+NRAwVHDkSqUXSTiHk1Ayo/JVWcdVaRuwwQWQDfyoM4iNJwNPArdtSBx8N/R8g4sl0XRGKBMGhGpD9pN2iZARZ7ITBMJ0x2nsGatJeNq2E4atCRceAzQY7UxBFJUvf32MEva448pmhN7aHx4iaZxNUMKMzT4B5Zo1jg1WBj8DwegyEai3lJ4MQHECz+MUGRGexxl4STQag6I19Uths0eYAl4nVfEcSg6A6TH9AAG4mpB+sDAyqLdStUrfI6jJFihB3xpRK4x0XNNOBRdaTfEkJgXwQuAvL7tLwxsGgskQuhKeJfElLY+/PD2w9hFIsG3QgRGABG+AQxzbBkWrQb+OqkQTOyjlt2gyYOsIRspxiZkNRyHMnZf6zCKC16gFWxllMVo4fHGklhPJAimHK9MRxkrkRiEKoJVhbJ9jaM3pHu7yzJEYzysWM7z/Ec30PGe/1jqMMw/uVZQheZmpn/O9Z9pEEzcte3bBFaXrxOGHmYqg5j1fSfuDtFLRABj5yQQv1i0aeatGHZiKGHClkEd4wNVF6O0gBjhmhPn7iNkjQANUtoI+62SthQeH88GEV4GA6PoQG7oFFETPOYIyaIjDmeZoQwZkDyjM2gydfDRFR3UyZMto9QS3rvZRU7r2jCSY6+AKEnli4c3MKpOVEMqNiq21Y0U+0ZAcybsEpmaickQ6eGFOW/9ojcELznUIDIzvjWcFwPlRgfIfrru6fzcaMXHyKNgTGPps/GUgZNvkOM9DmGNNmpMayydBnYj2EJIPYqklfZGB4LY1j+tTtWycia2iELxH7jRHtGRCgPUMoILieCW6RJgnK641uLYXuxG4QGTiWE4Ax/CUN4/jdqKmZJkCRhkzQtZL7OfOXKeEyEQQMU4f4s+mXCZOeJ1JbWffE6Yb43mO5kxq/P78t/xZnWXjzYfalypji1rJJmuqTt0Qf/m4T7p5HtGbOXwOpTkuaD++zlcgXtKS8To2hQULhv4x+Je/4VxxvQU+Rf0lHkaKFAv8FIyBkqZ5SxGjQgdURIBenDBq0UI3raV85MUnsvjDPa4e5ScitZIrZoHB6zuEFHKh3KpfLbt7bz+iz3nEy0ZyxCARqcVc99zuhRCX9+Z3r+jPJcE7ghmJPm3pFeqB1kShOt5CtbDBqwYPfxJ6CqyFnCslppRg9Cvul8fDlhoei/yTSsBdsy0Z65CCW6HmAjFeK6hHWAkRjBBk1TVEAMLZOeNBbgKFIUTSGh9UW3DA/fPCnPyC8wRVOQPux8ZcKktrN150fH430J6z3IlL2jscgE8FfmLB/0jNiY0/yTrzfCVhkX/Tj7qOekuQBb7SlDg6bMZjW/Aq1SgzZGvoMNWtJPUqRlLrAxkcOsZQ0S2R0qj46RYek1HcDzAqFcvMKSvLtke0iNRz8BUXOcIByOA74rdQnIeK/5p+6V868DlWcltTykVJienoAn4/es4ShaJwwaVI4mD9sMNe2Xki3WV4MpRcNjjqIAhoVKr53K+2FGgEhSkCCnw4nFT4zKkjYSYw2453HruBjpNb/FwZruKGoTSjauEWfzweDSUnaicLoZIpbv34UaGbu7RUiRyfMkNLg4gMnDx5+wSM25aX9WrFpZQ5mJAheJ+s02VHeAIyf5AL49YUCxP/DFJRS1c/vz/xHO1lkSMCPIEznDA8wIN/jvgKjRCwx8D9Blg6Hg9GZhcPce4Aqvu05qBg214Scp0pI7+LuSf9Wa7JiJI8W7N+azof9/ZHAFEBGQ97Cl61821mNPG+XlA8KAYofpa/5v0GOP24be+wAM7WLk03keR4riV0yGGcJfaPOaBNf9PcjJhQYtVJgWTgtA4PDq/TkGBk29OubAgwPKOz6jfdjS/Dz0Xd+UPzqgJTvMDs08+gDsST/ATD5/Hlt+0k8+5t6V8zFRhLqNnNfqK40bNopVIz0rJHcjM4siaG9ER18fXlrLfM4BjuD8mLpG/GJkMMe91jhK7BmHR/5yHmFV2KOFhYW+yJF2qd6RURSfQqMGWj4yzn/+4O/qx154C/29O1AFBTcL2cJEiKocontmEYjvZUbLg2ofx2SoBPxAvWmI/6/uZGoNsGdHa0fPIrH7+8ZPY3CAqeDPRPj8waPl5eUHPYm4uq5NuEVhyBaPna2trBw9Uo0X3qP3tXnQWCT+bA98sXa090xNxESRodszKQJDgD9JQDZikdjy0cqTJytHz2JjXUoX91gfR4mevbW1vV+/eQ8nY+E0dJcUfBdQ9Yu9CmKHh3+rhdkR9dHZ8nlEfXditBj/Nqhp9JC+tzHxJpFvA7jTBtY1Vg71D3fID/rEs57sgF1SQXQePt6Pml+r0afwH22OXw/Zw4E3h1Et1BVXY/qSO/AbNmDOw8nMgLEUT9WDfTYQOIha2zNVEXz3iONusAHzStoPXmqvJL3UegTbZV9d8G+Nn7/iYaLEwEPy3SX+5LHRsBr47QSMTgM3yFdTqKIY2+KL6wYONVZW9Q86JYfmd9dl4/EfrrMaKeuAAXH/jo77srz64vqnN8dwMQTo8pv1+6tR2bRH8nVVJ/Lgzr55EBwVX6wfm/1T3wy8WAVx/uGACRkzZL57xHGXD3uMHyRevrs01ky/f631qOf2CWDi5IaOSw740rcNXFIv5nD85Wt4mce33/PgksYP3p2Q59DvDzMygtF3DSL5wfxOOxJd3d9notoREX8rynpiQ9bm+s3fo58cHoLfRMmj2nFxdR98s+o3f2Bvz0++hc7xfOjk/eX7iy4ezVLDgxcXFyHjAFHTp2KBHw6+d8Px9EnUGfRb6PUXwBJFUbz6LNtP8G/+8Fl9oN/xc6GmkeUNaw/eH/6ssTet3IPlPX0val66fs91wlLtwYt3rN2vlFIXbJULPSiV3pFVLzHsBdTd37ShUysW6gjZt3PwoAqWpxvsXAXJYQMeD8rzdLIycqoz635FPuarTi3riKZhaXhQ1/Ha57XhKw82J3SsMutBrbAayzu5X8jHViVMhwc1ZmtDpxQH9XXWDiAkOqDUnIfaqBZ4UDa8Yr3rDi0z2xkFZg10ZJ1ZLwZRld1S3N/l82p0RHlZAh1YadbNPb81VN8HxJO90b6ohmveFJfNFirvkeqB//h5Z2UbocGfXSikK++16z5F/rZV1GsEISnt29nJprM7zu/c+Dyp6txR+zjACgc7O7Oz6coU/T9P0ep+9eyCb7CaWfMg0y90CkeGNUtns9lqO8l5EM52TE3eCluk2ODBvrEeb/FtotZ9Yz3ZV8YhAek+Q7XvPtx4ZctmOLLlGt3fZWe3doa82AndloF0PXoNXbnXJwXPM5BeZBprVNUmPN4XBOgm1xmqvtGnA0pecuTFrsOV49aK8HDLeKZzt4mn4Vl+zQuGKsf1ncjR74ghj2TtdyNlOjzQ2b8TTY3huu1nbhVcXnYUcqiBWRfmXGaoG7666WZGPyjV6THakXJz+ZpeVn005N5KEIWrK+qogEm3hI0xK86mJ+x1G9sDoY7YvhpcMmzMIm4y54pCCjVjymi4E9RSBWcHpfbPiyihhVYx5IPv37eZHyZjeTM4vdnugSRUWiHTILbbzFDJ3mRWaOdAUqzvL7QAbRxITMZexx9gdLNt5j8kzLfCklnR3bY1EduVmiwo7TH/UlfdyaEa0Za4lilXa/K0DdKmNB61Xo2hqVaTxExad8OwYHS+xSQFhXvtkDGMvpY6kkymUml5AjubLSQpKMxXXMfYMsy1jKSaCIJY2GzJHnpQxOabjshqQl9LxI3ZmLu6KRM7S81vxxhShHvtH0EmhrZWm2OJ8S862vnKGM0pTTncQaFrtr06yIbuJvwk5m5FM18NhXmhQZaCEr39pWsoZRrZHZUpJh2rENWCdHaifpYAP5sFlwcQxtCtjWpbmtnpYSZLdQqYFeksGEs176YbVARpyTt+DOS3qu78RtBT3KrRgl2FwdymAHiqrr9DiiTA7dJa02TTmCuVi/6KUscAdqZKLaLHxE52ehfwJFk3HAzBbQglSZAmTgvuGPg6kMqXtqbujovkPs7jmanFUv4KB7pxjA5mc/fmd4MCRmh3fjpXGHTPujeIoVQq1bBObgjpdHo03R6d83/5EcwDwVhQHQAAAABJRU5ErkJggg=="style="height:40px;width:60px;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrEgWKSDFHGSYvoDnzNTqyBr3wW6U0rdXeoA&usqp=CAU"style="height:40px;width:60px;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFLyirztC99DKR3HmNn6lrE1HRLeExMniQgg&usqp=CAU"style="height:40px;width:60px;">
+  </div>
+  </footer>
+ </body>
+</html>
